@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon dist/index.js",
     "build": "npm install && npx tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "watch": "tsc -w"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^8.2.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "stripe": "^14.22.0",
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
