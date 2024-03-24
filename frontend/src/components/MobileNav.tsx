@@ -12,7 +12,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import MobileNavLinks from "./MobileNavLinks";
 
 const MobileNav = () => {
-  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, user } = useAuth0();
+
   return (
     <Sheet>
       <SheetTrigger>
@@ -26,7 +27,7 @@ const MobileNav = () => {
               {user?.email}
             </span>
           ) : (
-            <span>Welcome to Swigga</span>
+            <span> Welcome to Swigga!</span>
           )}
         </SheetTitle>
         <Separator />
