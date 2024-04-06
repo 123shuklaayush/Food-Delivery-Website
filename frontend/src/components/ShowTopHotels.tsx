@@ -17,7 +17,7 @@ const ShowTopRestaurants = () => {
   useEffect(() => {
     const fetchTopRestaurants = async () => {
       try {
-        const response = await fetch("http://localhost:7000/api/restaurant");
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/restaurant`);
         const data = await response.json();
         setRestaurants(data);
         console.log(data)
@@ -38,7 +38,7 @@ const ShowTopRestaurants = () => {
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {restaurants.map((restaurant) => (
-              <Link to={`http://localhost:5173/detail/${restaurant._id}`}>
+              <Link to={`${import.meta.env.VITE_AUTH0_CALLBACK_URL}/detail/${restaurant._id}`}>
               <HotelCard
                 key={restaurant._id}
                 name={restaurant.restaurantName}
