@@ -2,6 +2,7 @@ import landingImage from "../assets/landing.png";
 import appDownloadImage from "../assets/appDownload.png";
 import SearchBar, { SearchForm } from "@/components/SearchBar";
 import { useNavigate } from "react-router-dom";
+import ShowTopHotels from "@/components/ShowTopHotels";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -23,6 +24,9 @@ const HomePage = () => {
           placeHolder="Search by City or Town"
           onSubmit={handleSearchSubmit}
         />
+      </div>
+      <div>
+        <ShowTopHotels />
       </div>
       <div className="grid md:grid-cols-2 gap-5">
         <img src={landingImage} />
