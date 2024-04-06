@@ -85,7 +85,18 @@ const searchRestaurant = async (req: Request, res: Response) => {
   }
 };
 
+const getAllRestaurants = async (req: Request, res: Response) => {
+  try {
+    const restaurants = await Restaurant.find().lean();
+
+    res.json(restaurants);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+};
 export default {
   getRestaurant,
   searchRestaurant,
+  getAllRestaurants,
 };
